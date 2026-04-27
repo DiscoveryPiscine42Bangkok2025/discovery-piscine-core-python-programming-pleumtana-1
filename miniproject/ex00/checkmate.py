@@ -19,7 +19,7 @@ def checkmate(board):
             return
         
 
-    VALID_PIECES = {'K', 'Q', 'R', 'B', 'P', '.','k','q','r','b','p'}
+    VALID_PIECES = {'K', 'Q', 'R', 'B', 'P', '.',}
     for row in rows:
         for ch in row:
             if ch not in VALID_PIECES:
@@ -31,7 +31,7 @@ def checkmate(board):
     king_pos = None
     for r in range(size):
         for c in range(size):
-            if rows[r][c] == 'K'or rows[r][c] == 'k':
+            if rows[r][c] == 'K':
                 king_pos = (r, c)
                 break
         if king_pos:
@@ -43,8 +43,7 @@ def checkmate(board):
  
 
     # ตรวจสอบว่ามี K มากกว่า 1 ตัวหรือไม่
-    k_check ={'k','K'}
-    king_count = sum(ch in k_check for row in rows for ch in row)
+    king_count = sum(ch in 'K' for row in rows for ch in row)
     if king_count > 1:
         print("Error: K++")
         return
@@ -56,7 +55,7 @@ def checkmate(board):
         r, c = kr + dr, kc + dc
         while 0 <= r < size and 0 <= c < size:
             piece = rows[r][c]
-            if piece == 'R' or piece == 'Q' or piece == 'r' or piece == 'q':
+            if piece == 'R' or piece == 'Q':
                 print("Success")
                 return
             elif piece != '.':
@@ -69,7 +68,7 @@ def checkmate(board):
         r, c = kr + dr, kc + dc
         while 0 <= r < size and 0 <= c < size:
             piece = rows[r][c]
-            if piece == 'B' or piece == 'Q' or piece == 'b' or piece == 'q':
+            if piece == 'B' or piece == 'Q':
                 print("Success")
                 return
             elif piece != '.':
@@ -82,7 +81,7 @@ def checkmate(board):
     for dr, dc in [(1, -1), (1, 1)]:
         r, c = kr + dr, kc + dc
         if 0 <= r < size and 0 <= c < size:
-            if rows[r][c] == 'P' or rows[r][c] == 'p':
+            if rows[r][c] == 'P':
                 print("Success")
                 return
  
