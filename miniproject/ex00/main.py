@@ -4,10 +4,10 @@ from checkmate import checkmate
 def main():
     # ตัวอย่างที่ 1: R อยู่ในแนวเดียวกับ K → Success
     board = """\
-..w.
-.r..
-..k.
-p..."""
+bbbb
+rrrr
+..p.
+p.k."""
     checkmate(board)
  
  
