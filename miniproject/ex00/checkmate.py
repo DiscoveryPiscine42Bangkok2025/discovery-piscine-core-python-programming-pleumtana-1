@@ -38,7 +38,7 @@ def checkmate(board):
             break
  
     if king_pos is None:
-        print("Error: no ok")
+        print("Error: No ok")
         return
  
 
