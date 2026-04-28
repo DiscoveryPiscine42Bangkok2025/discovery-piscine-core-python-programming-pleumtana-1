@@ -19,7 +19,7 @@ def checkmate(board):
             return
         
 
-    VALID_PIECES = {'K', 'Q', 'R', 'B', 'P', '.',}
+    VALID_PIECES = {'K', 'Q', 'R', 'B', 'P', '.'}
     for row in rows:
         for ch in row:
             if ch not in VALID_PIECES:
